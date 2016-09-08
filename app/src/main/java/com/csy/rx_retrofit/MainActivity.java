@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
-    @Bind(R.id.tabs) TabLayout tabLayout;/**为什么要加android前缀?*/
+    @Bind(R.id.tabs) TabLayout tabLayout;
     @Bind(R.id.viewPager) ViewPager viewPager;
     @Bind(R.id.toolBar) Toolbar toolBar;
 
@@ -26,10 +26,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ButterKnife.bind(this);//butterknife绑定   ??
+        ButterKnife.bind(this);//butterknife绑定
 
-        setSupportActionBar(toolBar);//绑定toolbar
+        /** 绑定toolbar*/
+        setSupportActionBar(toolBar);
 
+        /** viewPager设置Adapter*/
         viewPager.setAdapter(new FragmentPagerAdapter(getFragmentManager()) {
             @Override
             public int getCount() {
@@ -38,32 +40,28 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public Fragment getItem(int position) {
-                switch (position){
+                switch (position) {
                     case 0:
                         return new ElementaryFragment();
                     case 1:
                         return new ElementaryFragment();
-
                     case 2:
                         return new ElementaryFragment();
-
                     case 3:
                         return new ElementaryFragment();
-
                     case 4:
                         return new ElementaryFragment();
-
                     case 5:
                         return new ElementaryFragment();
-
                     default:
                         return new ElementaryFragment();
                 }
             }
 
+            /** 返回标题*/
             @Override
             public CharSequence getPageTitle(int position) {
-                switch (position){
+                switch (position) {
                     case 0:
                         return getString(R.string.title_elementary);
                     case 1:
@@ -81,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        tabLayout.setupWithViewPager(viewPager);//绑定ViewPager
+        /** 绑定ViewPager*/
+        tabLayout.setupWithViewPager(viewPager);
     }
 }

@@ -18,7 +18,7 @@ import rx.functions.Func1;
 public class FakeApi {
     Random mRandom = new Random();
 
-    //被观察者，map 转换
+    /**被观察者，map 转换*/
     public Observable<FakeToken> getFakeToken(@NonNull String fakeAuth){
         return Observable.just(fakeAuth)
                 .map(new Func1<String, FakeToken>() {

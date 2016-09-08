@@ -41,21 +41,21 @@ public class ElementaryFragment extends BaseFragment{
 
     CommonAdapter mAdapter = new CommonAdapter();
 
-    //Rx!
-    Observer<List<CommonImage>> observer = new Observer<List<CommonImage>>() {//观察者
+    /** Rx*/
+    Observer<List<CommonImage>> observer = new Observer<List<CommonImage>>() {/** 观察者*/
         @Override
         public void onCompleted() {
         }
 
         @Override
         public void onError(Throwable e) {
-            mSwipeRefreshLayout.setRefreshing(false);//错误时禁止刷新
+            mSwipeRefreshLayout.setRefreshing(false);/** 错误时禁止刷新*/
             Toast.makeText(getActivity(), R.string.loadng_failed,Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onNext(List<CommonImage> commonImages) {
-            mSwipeRefreshLayout.setRefreshing(false);//?为什么禁
+            mSwipeRefreshLayout.setRefreshing(false);/** 为什么禁？*/
             mAdapter.setImages(commonImages);
         }
     };
@@ -75,7 +75,7 @@ public class ElementaryFragment extends BaseFragment{
                 .search(key)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(observer);
+                .subscribe(observer);/** 绑定*/
     }
 
 

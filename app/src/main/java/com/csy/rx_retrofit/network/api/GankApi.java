@@ -9,7 +9,7 @@ import rx.Observable;
 /**
  * author:Csy on 2016/9/8 17:02
  * e-mail：s1yuan_chen@163.com
- * desc: gank api
+ * desc: gank api    Retrofit_Rx ?
  */
 public interface GankApi {
     @GET("data/福利/{number}/{page}")

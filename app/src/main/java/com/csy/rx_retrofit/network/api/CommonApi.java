@@ -11,7 +11,7 @@ import rx.Observable;
 /**
  * author:Csy on 2016/9/8 16:52
  * e-mail：s1yuan_chen@163.com
- * desc: 网络
+ * desc: 网络 q ?
  */
 public interface CommonApi {
     @GET("search")
