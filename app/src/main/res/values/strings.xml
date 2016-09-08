@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Rx_retrofit</string>
+    <string name="title_elementary">基本</string>
+    <string name="title_map">转换(map)</string>
+    <string name="title_zip">压合(zip)</string>
+    <string name="title_token">Token(flatMap)</string>
+    <string name="title_token_advanced">Token_高级()</string>
+    <string name="title_cache">缓存(BehaviorSubject)</string>
+    <string name="question_mark">\?</string>
+    <string name="dialog_elementary">RxJava 和 Retrofit 结合使用最基本的格式：用 subscribeOn() 和 observeOn() 来控制线程，并通过 subscribe() 来触发网络请求的开始。代码大致形式：\n\napi.getData()\n&#160;&#160;&#160;&#160;.subscribeOn(Schedulers.io())\n&#160;&#160;&#160;&#160;.observeOn(AndroidSchedulers.mainThread())\n&#160;&#160;&#160;&#160;.subscribe(observer);</string>
+    <string name="api_source_zhuangbi">* 本页 Sample 使用的 API 来自 <b>装逼大全</b> zhuangbi.info</string>
+    <string name="loadng_failed">数据加载失败</string>
+
+</resources>
