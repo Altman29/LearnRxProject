@@ -2,6 +2,8 @@ package com.csy.rx_retrofit;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.util.Log;
+import android.widget.Toast;
 
 import butterknife.OnClick;
 import rx.Subscription;

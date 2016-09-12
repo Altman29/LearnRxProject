@@ -3,7 +3,7 @@
     package="com.csy.rx_retrofit" >
 
     <uses-permission android:name="android.permission.INTERNET"/>
-
+    <!-- keystores 123456 alis rx_retrofit 456789-->
     <application
         android:name=".App"
         android:allowBackup="true"

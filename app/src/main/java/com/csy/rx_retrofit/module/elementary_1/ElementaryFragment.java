@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.csy.rx_retrofit.BaseFragment;
 import com.csy.rx_retrofit.R;
 import com.csy.rx_retrofit.adapter.CommonAdapter;
-import com.csy.rx_retrofit.entity.CommonImage;
+import com.csy.rx_retrofit.entity.ZhuangbiImage;
 import com.csy.rx_retrofit.network.Network;
 
 import java.util.List;
@@ -31,6 +31,12 @@ import rx.schedulers.Schedulers;
  * author:Csy on 2016/9/8 14:15
  * e-mail：s1yuan_chen@163.com
  * desc:  基本页
+ *      RxJava和Retrofit集合最基本的使用方式。用subscribeOn()和observeOn()来控制线程，用subscribe()来触发网络请求。
+ *      代码形式大致如下：
+ *          api.getData()
+ *              .subscribeOn(Schedulers.io())
+ *              .observeOn(AndroidSchedulers.mainThread())
+ *              .subscribe(observer);
  */
 public class ElementaryFragment extends BaseFragment{
 
@@ -42,7 +48,7 @@ public class ElementaryFragment extends BaseFragment{
     CommonAdapter mAdapter = new CommonAdapter();
 
     /** Rx*/
-    Observer<List<CommonImage>> observer = new Observer<List<CommonImage>>() {/** 观察者*/
+    Observer<List<ZhuangbiImage>> observer = new Observer<List<ZhuangbiImage>>() {/** 观察者*/
         @Override
         public void onCompleted() {
         }
@@ -54,8 +60,8 @@ public class ElementaryFragment extends BaseFragment{
         }
 
         @Override
-        public void onNext(List<CommonImage> commonImages) {
-            mSwipeRefreshLayout.setRefreshing(false);/** 为什么禁？*/
+        public void onNext(List<ZhuangbiImage> commonImages) {
+            mSwipeRefreshLayout.setRefreshing(false);
             mAdapter.setImages(commonImages);
         }
     };
@@ -72,7 +78,7 @@ public class ElementaryFragment extends BaseFragment{
 
     private void search(String key){
         mSubscription = Network.getCommonApi()
-                .search(key)
+                .search(key)//
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);/** 绑定*/

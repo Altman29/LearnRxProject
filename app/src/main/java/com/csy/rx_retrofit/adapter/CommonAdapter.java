@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.csy.rx_retrofit.R;
-import com.csy.rx_retrofit.entity.CommonImage;
+import com.csy.rx_retrofit.entity.ZhuangbiImage;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class CommonAdapter extends RecyclerView.Adapter{
 
     private static final String TAG = "CommonAdapter";
 
-    List<CommonImage> mImages;
+    List<ZhuangbiImage> mImages;
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -36,8 +36,8 @@ public class CommonAdapter extends RecyclerView.Adapter{
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         DebouceViewHolder viewHolder = (DebouceViewHolder) holder;
-        CommonImage image = mImages.get(position);
-        Glide.with(holder.itemView.getContext()).load(image.image_url).into(viewHolder.imageIv);//Glide
+        ZhuangbiImage image = mImages.get(position);
+        Glide.with(holder.itemView.getContext()).load(image.image_url).into(viewHolder.imageIv);/** Glide*/
         viewHolder.descriptionTv.setText(image.description);
     }
 
@@ -50,7 +50,7 @@ public class CommonAdapter extends RecyclerView.Adapter{
      * 设置图片？？
      * @param images
      */
-    public void setImages(List<CommonImage> images){
+    public void setImages(List<ZhuangbiImage> images){
         this.mImages = images;
         notifyDataSetChanged();
     }

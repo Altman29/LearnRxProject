@@ -13,7 +13,7 @@ import rx.functions.Func1;
 /**
  * author:Csy on 2016/9/8 17:08
  * e-mail：s1yuan_chen@163.com
- * desc: 网络访问模拟
+ * desc: 网络访问模拟  138 3715 1215
  */
 public class FakeApi {
     Random mRandom = new Random();

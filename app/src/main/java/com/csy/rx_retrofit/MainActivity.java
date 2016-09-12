@@ -8,7 +8,12 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.csy.rx_retrofit.module.Zip_3.ZipFragment;
+import com.csy.rx_retrofit.module.cache_6.CacheFragment;
 import com.csy.rx_retrofit.module.elementary_1.ElementaryFragment;
+import com.csy.rx_retrofit.module.map_2.MapFragment;
+import com.csy.rx_retrofit.module.token_flatmap_4.TokenFragment;
+import com.csy.rx_retrofit.module.token_retryWhen_5.TokenAdvancedFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -42,19 +47,19 @@ public class MainActivity extends AppCompatActivity {
             public Fragment getItem(int position) {
                 switch (position) {
                     case 0:
-                        return new ElementaryFragment();
+                        return new ElementaryFragment();//基本
                     case 1:
-                        return new ElementaryFragment();
+                        return new MapFragment();//map
                     case 2:
-                        return new ElementaryFragment();
+                        return new ZipFragment();//zip
                     case 3:
-                        return new ElementaryFragment();
+                        return new TokenFragment();
                     case 4:
-                        return new ElementaryFragment();
+                        return new TokenAdvancedFragment();
                     case 5:
-                        return new ElementaryFragment();
+                        return new CacheFragment();
                     default:
-                        return new ElementaryFragment();
+                        return new MapFragment();
                 }
             }
 

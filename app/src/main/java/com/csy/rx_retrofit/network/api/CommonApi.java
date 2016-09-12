@@ -1,6 +1,6 @@
 package com.csy.rx_retrofit.network.api;
 
-import com.csy.rx_retrofit.entity.CommonImage;
+import com.csy.rx_retrofit.entity.ZhuangbiImage;
 
 import java.util.List;
 
@@ -15,5 +15,5 @@ import rx.Observable;
  */
 public interface CommonApi {
     @GET("search")
-    Observable<List<CommonImage>> search(@Query("q") String query);
+    Observable<List<ZhuangbiImage>> search(@Query("q") String query);
 }
