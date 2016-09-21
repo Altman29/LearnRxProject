@@ -37,6 +37,7 @@ import rx.schedulers.Schedulers;
  *              .subscribeOn(Schedulers.io())
  *              .observeOn(AndroidSchedulers.mainThread())
  *              .subscribe(observer);
+ *
  */
 public class ElementaryFragment extends BaseFragment{
 

@@ -6,7 +6,6 @@ import android.app.Fragment;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
 import com.csy.rx_retrofit.module.Zip_3.ZipFragment;
 import com.csy.rx_retrofit.module.cache_6.CacheFragment;
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Bind(R.id.tabs) TabLayout tabLayout;
     @Bind(R.id.viewPager) ViewPager viewPager;
-    @Bind(R.id.toolBar) Toolbar toolBar;
+//    @Bind(R.id.toolBar) Toolbar toolBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);//butterknife绑定
 
         /** 绑定toolbar*/
-        setSupportActionBar(toolBar);
+//        setSupportActionBar(toolBar);
 
         /** viewPager设置Adapter*/
         viewPager.setAdapter(new FragmentPagerAdapter(getFragmentManager()) {
